@@ -13,7 +13,7 @@ from PIL import ImageDraw
 from rgbmatrix import RGBMatrix, RGBMatrixOptions  # pylint: disable=import-error
 
 
-def make_rect(width, height, color):
+def make_rect(width: int, height: int, color: tuple) -> Image:
     """generate a "rounded" rect
 
     Args:
@@ -77,7 +77,7 @@ def make_rect(width, height, color):
     return img
 
 
-def move_down(matrix, rect, pos):
+def move_down(matrix: RGBMatrix, rect: Image, pos: int) -> None:
     """
     move a rectangle's Group down (todo: add gravity?)
     """
@@ -88,7 +88,7 @@ def move_down(matrix, rect, pos):
             matrix.SetPixel(pos + j, i - 1, 0, 0, 0)
 
 
-def move_up(matrix, rect, pos):
+def move_up(matrix: RGBMatrix, rect: Image, pos: int) -> None:
     """
     move a rectangle's Group up (todo: add gravity?)
     """
